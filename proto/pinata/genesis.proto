@@ -1,0 +1,15 @@
+syntax = "proto3";
+package jfkmlktrumpwtf.pinata.pinata;
+
+// this line is used by starport scaffolding # genesis/proto/import
+import "pinata/ipfs.proto";
+
+option go_package = "github.com/jfkmlktrumpwtf/pinata/x/pinata/types";
+
+// GenesisState defines the pinata module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+		repeated Ipfs ipfsList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+		uint64 ipfsCount = 2; // this line is used by starport scaffolding # genesis/proto/stateField
+    // this line is used by starport scaffolding # ibc/genesis/proto
+}

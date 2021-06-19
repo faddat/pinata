@@ -1,0 +1,16 @@
+syntax = "proto3";
+package jfkmlktrumpwtf.pinata.pinata;
+
+option go_package = "github.com/jfkmlktrumpwtf/pinata/x/pinata/types";
+
+import "gogoproto/gogo.proto";
+
+message Ipfs {
+  string creator = 1;
+  uint64 id = 2;
+  string filename = 3; 
+  string cid = 4; 
+  string tags = 5; 
+  string weight = 6; 
+  string paid = 7; 
+}

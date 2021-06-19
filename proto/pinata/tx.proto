@@ -1,0 +1,47 @@
+syntax = "proto3";
+package jfkmlktrumpwtf.pinata.pinata;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/jfkmlktrumpwtf/pinata/x/pinata/types";
+
+// Msg defines the Msg service.
+service Msg {
+    // this line is used by starport scaffolding # proto/tx/rpc
+  rpc CreateIpfs(MsgCreateIpfs) returns (MsgCreateIpfsResponse);
+  rpc UpdateIpfs(MsgUpdateIpfs) returns (MsgUpdateIpfsResponse);
+  rpc DeleteIpfs(MsgDeleteIpfs) returns (MsgDeleteIpfsResponse);
+}
+
+// this line is used by starport scaffolding # proto/tx/message
+message MsgCreateIpfs {
+  string creator = 1;
+  string filename = 2;
+  string cid = 3;
+  string tags = 4;
+  string weight = 5;
+  string paid = 6;
+}
+
+message MsgCreateIpfsResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateIpfs {
+  string creator = 1;
+  uint64 id = 2;
+  string filename = 3;
+  string cid = 4;
+  string tags = 5;
+  string weight = 6;
+  string paid = 7;
+}
+
+message MsgUpdateIpfsResponse { }
+
+message MsgDeleteIpfs {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteIpfsResponse { }

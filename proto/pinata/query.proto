@@ -1,0 +1,39 @@
+syntax = "proto3";
+package jfkmlktrumpwtf.pinata.pinata;
+
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+// this line is used by starport scaffolding # 1
+import "pinata/ipfs.proto";
+
+option go_package = "github.com/jfkmlktrumpwtf/pinata/x/pinata/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    // this line is used by starport scaffolding # 2
+	rpc Ipfs(QueryGetIpfsRequest) returns (QueryGetIpfsResponse) {
+		option (google.api.http).get = "/jfkmlktrumpwtf/pinata/pinata/ipfs/{id}";
+	}
+	rpc IpfsAll(QueryAllIpfsRequest) returns (QueryAllIpfsResponse) {
+		option (google.api.http).get = "/jfkmlktrumpwtf/pinata/pinata/ipfs";
+	}
+
+}
+
+// this line is used by starport scaffolding # 3
+message QueryGetIpfsRequest {
+	uint64 id = 1;
+}
+
+message QueryGetIpfsResponse {
+	Ipfs Ipfs = 1;
+}
+
+message QueryAllIpfsRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllIpfsResponse {
+	repeated Ipfs Ipfs = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
